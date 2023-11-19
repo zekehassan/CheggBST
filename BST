@@ -1,0 +1,333 @@
+
+/**
+ * Your implementation of the BST class
+ *
+ * @author YOUR NAME HERE
+ *
+ * Collaborators: LIST ALL COLLABORATORS YOU WORKED WITH HERE
+ *
+ * Resources: LIST ALL NON-COURSE RESOURCES YOU CONSULTED HERE
+ */
+
+import java.util.List;
+import java.util.Objects;
+
+
+public class BST<K extends Comparable<? super K>, V> {
+
+    private BSTNode<K, V> root;
+
+    /**
+     * This constructor initializes an empty BST.
+     *
+     * There is no need to do anything for the constructor.
+     */
+    public BST() {
+        // DO NOT IMPLEMENT THIS CONSTRUCTOR!
+    }
+
+
+    /**
+     * Adds a new entry to the tree or updates the value of an existing key in the tree
+     *
+     * Traverse the tree to find the appropriate location. If the key is
+     * already in the tree, then update its value to the new value. Otherwise,
+     * create a new node consisting the new (key, value) pair and add it to the tree.
+     * The new node becomes a leaf. Then go back up the tree from the new leaf to the root.
+     * Upon seeing an imbalanced node on the path, balance it with proper rotations.
+     * Update the height, balance factor and the new size instance variable of every affected node.
+     *
+     * This method is essentially the same as its counterpart in SimpleBST. Therefore,
+     * you can use the code for put(), its helper method putHelper() and the helper's helpers -
+     * balance(), rotateLeft(), rotateRight(), update() and height(), from the SimpleBST class.
+     * The only new items you need to incorporate are the following:
+     * 		1. Modify the code properly to handle the generic types K and V for the key and value.
+     * 		2. Provide the code for the else block of the balance() method to handle rotation cases 2 and 4
+     *   	   described on Slides 33 & 35 for the BST lectures. The else block mirrors the preceding if block.
+     * 		3. In update(), update the size instance variable of a BST node in addition to
+     *         height and balance factor. You need to think of the relation between the size of a node
+     *         and the sizes of its left and right children, and how to define the size of a null node.
+     *      4. Handle the exceptions properly.
+     *
+     * Time Complexity: O(log n)
+     *
+     * @param key    the key of the entry to add or update
+     * @param value  the value associated with key
+     * @throws       IllegalArgumentException if key or value is null
+     */
+    public void put(K key, V value) {
+
+    }
+
+
+    /**
+     * Returns the value associated with a given key.
+     *
+     * Traverse the tree to find the appropriate location. If the key is
+     * in the tree, then return its value. Otherwise, return null.
+     *
+     * Time Complexity: O(log n)
+     *
+     * @param key  the key to search for
+     * @return     the value associated with key if key is in the tree, null otherwise
+     * @throws     IllegalArgumentException if key is null
+     */
+    public V get(K key) {
+
+        return null;
+    }
+
+
+    /**
+     * Finds and returns all the nodes in the tree in DESCENDING order by key
+     *
+     * Time Complexity: O(n)
+     *
+     * Note: You will NOT receive credit if you perform an in-order traversal of the tree and
+     * then reverse the returned list, as this is unnecessary. Instead, your method should
+     * directly obtain the list of all keys in descending order.
+     *
+     * Hint: Modify in-order traversal by changing the order in which the nodes are visited.
+     *
+     * @return  the list of all nodes in the tree in descending order by key
+     */
+    public List<BSTNode<K, V>> descendingOrder() {
+
+        // Replace this line with your return statement
+        return null;
+    }
+
+
+    /**
+     * Finds and returns the kth smallest key
+     *
+     * Ex:
+     * For the following BST
+     *
+     *                50
+     *              /    \
+     *            25      75
+     *           /  \     / \
+     *          12   37  70  80
+     *         /  \    \      \
+     *        10  15    40    85
+     *           /
+     *          13
+     *
+     * kthSmallest(1) should return 10
+     * kthSmallest(5) should return 25
+     * kthSmallest(3) should return 13
+     * kthSmallest(0) or kthSmallest(20) should cause IllegalArgumentException to be thrown
+     *
+     * Time Complexity: O(log n)
+     *
+     * Note: The required time complexity does NOT allow you to perform an in-order traversal
+     * on the entire tree and then return the kth smallest key. Instead you should only traverse the
+     * branch of the tree necessary to get the data you need.
+     *
+     * Hint: You will the size instance variable of the BST nodes helpful
+     *
+     * @param k  an positive integer between 1 and the size of the tree
+     * @return   kth smallest key in the tree
+     * @throws   IllegalArgumentException if k <= 0 or k > the size of the tree
+     */
+    public K kthSmallest(int k) {
+
+        // Replace this line with your return statement
+        return null;
+    }
+
+
+    /**
+     * Finds and returns the k smallest keys in ascending order
+     *
+     * Ex:
+     * For the following BST
+     *
+     *                50
+     *              /    \
+     *            25      75
+     *           /  \     / \
+     *          12   37  70  80
+     *         /  \    \      \
+     *        10  15    40    85
+     *           /
+     *          13
+     *
+     * kSmallest(0) should return the list []
+     * kSmallest(5) should return the list [10, 12, 13, 15, 25]
+     * kSmallest(3) should return the list [10, 12, 13]
+     * kSmallest(20) should cause java.lang.IllegalArgumentException to be thrown
+     *
+     * Time Complexity: O(log n + k)
+     *
+     * Note: The required time complexity does NOT allow you to perform an in-order traversal
+     * on the entire tree and then return the k smallest keys. NEITHER does it allow you to call
+     * kthSmallest() k times. Instead, you should only traverse the branches of the tree necessary
+     * to get the data you need.
+     *
+     * @param k  the number of smallest keys to find
+     * @return   the list of k smallest keys in ascending order
+     * @throws   IllegalArgumentException if k < 0 or k > the size of the tree
+     */
+    public List<K> kSmallest(int k) {
+
+        // Replace this line with your return statement
+        return null;
+    }
+
+
+    /**
+     * Finds and returns the predecessor of the given key, i.e. the largest key
+     * in the tree that is smaller than the given key.
+     *
+     * Note: The given key may or may not be in the tree.
+     *
+     * Time Complexity: O(log n)
+     *
+     * Note: The required time complexity does NOT allow you to traverse the tree to sort the keys
+     *
+     * Hint: Start by searching for the key in the tree.
+     * If the key is not in the tree, then its predecessor is the lowest key on the
+     * search path that is smaller than the key. If the key is in the tree,
+     * then there are two cases:
+     *
+     * 1. The left subtree of the key is empty. In this case, its predecessor is the lowest key
+     * on the search path that is smaller than the key.
+     *
+     * 2. The left subtree of the key is not empty. In this case, the predecessor is the
+     * rightmost node of the left subtree.
+     *
+     * Ex:
+     * For the following BST
+     *
+     *                50
+     *              /    \
+     *            25      75
+     *           /  \     / \
+     *          12   37  70  80
+     *         /  \    \     / \
+     *        10  15    40  78  85
+     *
+     * predecessor(82) should return 80
+     * predecessor(78) should return 75
+     * predecessor(50) should return 40
+     * predecessor(10) should return null
+     *
+     * @param key  the key to find the predecessor for
+     * @return     the predecessor of key if the predecessor exists, null otherwise
+     * @throws     IllegalArgumentException if key is null
+     */
+    public K predecessor(K key) {
+
+        // Replace this line with your return statement
+        return null;
+    }
+
+
+    /**
+     * Finds and returns the successor of the given key, i.e. the smallest key
+     * in the tree that is larger than the given key.
+     *
+     * This method mirrors predecessor()
+     *
+     * Time Complexity: O(log n)
+     *
+     * @param key  the key to find the successor for
+     * @return     the successor of key if the successor exists, null otherwise
+     * @throws     IllegalArgumentException if key is null
+     */
+    public K successor(K key) {
+
+        // Replace this line with your return statement
+        return null;
+    }
+
+
+    /**
+     * Decides whether this BST equals the BST represented by a given object.
+     * Roughly speaking, two BSTs are equal if they have the same shape and
+     * the corresponding nodes contain the same key-value pairs.
+     * We can carefully define equal BSTs by recursion as follows.
+     *
+     * Let T1 and T2 be two BSTs, whose roots are r1 and r2, respectively.
+     * We say that T1 and T2 are equal if (1) r1 and r2 store the same key-value pairs,
+     * (2) the left subtree of r1 in T1 and the left subtree of r2 in T2 are equal, and
+     * (3) the right subtree of r1 in T1 and the right subtree of r2 in T2 are equal.
+     *
+     * Time Complexity: O(n)
+     *
+     * When you implement the method recursively, be sure to think of the base cases carefully.
+     *
+     * You may find the equals method of the BSTNode class useful.
+     *
+     * @param o  an object that supposedly represents a BST object
+     * @return   true if and only if this BST equals the BST represented by the object o
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BST)) return false;
+        BST<?, ?> that = (BST<?, ?>) o;
+
+        // Do NOT modify the code above
+        // Your code starts here
+
+
+
+        // Replace the next line with your return statement
+        return false;
+    }
+
+
+    /**
+     * Decides whether this BST equals another BST AS A MAP.
+     * Two BSTs are equal as maps if they contain the same key-value pairs.
+     *
+     * For example, the following BSTs
+     *
+     *                (2, 20)            (1, 10)
+     *                 /         and          \
+     *            (1, 10)                    (2, 20)
+     *
+     * are NOT equal as BSTs, but they are equal as maps because both contain the key-value pairs
+     * [(1, 10), (2, 10)].
+     *
+     * Time Complexity: O(n)
+     *
+     * Hint: You can base this method on another method in the BST class you wrote for the assignment.
+     *
+     * You may find the equals method of the BSTNode class useful.
+     *
+     * @param o  an object that supposedly represents a BST object
+     * @return   true if and only if this BST equals the BST represented by the object o as a map
+     */
+    public boolean equalsAsMap(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BST)) return false;
+        BST<?, ?> that = (BST<?, ?>) o;
+
+        // Do NOT modify the code above
+        // Your code starts here
+
+
+
+        // Replace the next line with your return statement
+        return false;
+    }
+
+
+    /**
+     * Returns the root of the tree.
+     *
+     * For grading purposes only.
+     *
+     * @return the root of the tree
+     */
+    public BSTNode<K, V> getRoot() {
+        // DO NOT MODIFY THIS METHOD!
+        return root;
+    }
+
+}
+
