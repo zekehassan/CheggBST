@@ -2,7 +2,6 @@
 /**
  * Your implementation of the BST class
  *
- * @author YOUR NAME HERE
  *
  */
 
