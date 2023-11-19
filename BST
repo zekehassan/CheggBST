@@ -4,9 +4,6 @@
  *
  * @author YOUR NAME HERE
  *
- * Collaborators: LIST ALL COLLABORATORS YOU WORKED WITH HERE
- *
- * Resources: LIST ALL NON-COURSE RESOURCES YOU CONSULTED HERE
  */
 
 import java.util.List;
